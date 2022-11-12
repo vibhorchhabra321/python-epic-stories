@@ -1,13 +1,12 @@
 import functools
 import pprint
 from jira import JIRA
-from dotenv import load_dotenv
 import os
 import sys
 import warnings
 import pandas as pd
 
-load_dotenv()
+
 jira_base_url = os.environ.get("JIRA_CLOUD_URL")
 username = os.environ.get("JIRA_USER_LOCAL")
 apikey = os.environ.get("JIRA_TOKEN_LOCAL")
