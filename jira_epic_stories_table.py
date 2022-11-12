@@ -6,6 +6,7 @@ import sys
 import warnings
 import pandas as pd
 
+warnings.filterwarnings('ignore',message='Unverified HTTPS request')
 
 jira_base_url = os.environ.get("JIRA_CLOUD_URL")
 username = os.environ.get("JIRA_USER_LOCAL")
