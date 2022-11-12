@@ -1,0 +1,22 @@
+name: Get Epic Stories
+on:
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  Commit_Checker:
+    runs-on: ubuntu-latest
+    steps:
+    - name: checkout repo content
+      uses: actions/checkout@v2
+      
+    - name: setup python
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.8
+    - name: Generate Epic Stories Table
+      id: jira_epic_stories
+      run: |
+        output=$(python jira_epic_stories_table.py
+        echo "${output}}"
+        echo "::set-output name=epic_story_details::$output"
