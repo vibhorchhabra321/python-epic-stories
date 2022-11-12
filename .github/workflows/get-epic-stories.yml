@@ -17,6 +17,6 @@ jobs:
     - name: Generate Epic Stories Table
       id: jira_epic_stories
       run: |
-        output=$(python jira_epic_stories_table.py
+        output=$(python jira_epic_stories_table.py)
         echo "${output}}"
         echo "::set-output name=epic_story_details::$output"
