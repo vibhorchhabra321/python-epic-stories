@@ -62,7 +62,6 @@ def get_validation_fields(issue):
             jira_validation_results[fieldname] = ', '.join(keys)
     jira_validation_results['valid_ticket'] = valid_ticket
     return jira_validation_results
-print(jira_base_url)
 jira = JIRA(options={'server':jira_base_url, 'verify':False}, basic_auth=(username, apikey))
 
 jira.search_issues('parentEpic=ST-1')
