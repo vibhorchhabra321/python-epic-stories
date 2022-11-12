@@ -7,6 +7,14 @@ jobs:
   Commit_Checker:
     runs-on: ubuntu-latest
     steps:
+    
+    - name: Login
+      uses: atlassian/gajira-login@master
+      env:
+        JIRA_BASE_URL: "https://uneritx.atlassian.net"
+        JIRA_USER_EMAIL: ${{ secrets.JIRA_USER }}
+        JIRA_API_TOKEN: ${{ secrets.JIRA_TOKEN }}
+
     - name: checkout repo content
       uses: actions/checkout@v2
       
@@ -30,3 +38,9 @@ jobs:
         JIRA_CLOUD_URL: "https://uneritx.atlassian.net"
         JIRA_USER_LOCAL: ${{ secrets.JIRA_USER }}
         JIRA_TOKEN_LOCAL: ${{ secrets.JIRA_TOKEN }}
+    
+    - name: Comment on issue
+      uses: atlassian/gajira-comment@master
+      with:
+        issue: ST-1
+        comment: "${{ epic_story_details }}"
