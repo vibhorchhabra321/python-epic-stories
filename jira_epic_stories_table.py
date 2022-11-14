@@ -1,6 +1,7 @@
 import functools
 import pprint
 from jira import JIRA
+from tabulate import tabulate
 import os
 import sys
 import warnings
@@ -83,4 +84,5 @@ for story in epic_stories:
     epic_stories_details.append(validation_results)
 
 story_details_table=pd.DataFrame.from_dict(epic_stories_details)
-print(story_details_table.to_markdown())
+#print(story_details_table.to_markdown())
+print(tabulate(story_details_table, headers=['S.No','Service_list','QA_Tester','Valid_ticket','JIRA_ID','Summary','Status','Assignee'],tablefmt="jira"))
