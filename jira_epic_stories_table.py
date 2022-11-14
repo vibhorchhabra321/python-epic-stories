@@ -83,4 +83,4 @@ for story in epic_stories:
     epic_stories_details.append(validation_results)
 
 story_details_table=pd.DataFrame.from_dict(epic_stories_details)
-print(story_details_table.to_markdown())
+print(story_details_table.to_html())
