@@ -43,4 +43,4 @@ jobs:
       uses: atlassian/gajira-comment@master
       with:
         issue: ST-1
-        comment: "${{ ||heading 1||heading 2||heading 3|||col A1|col A2|col A3||col B1|col B2|col B3| }}"
+        comment: "||heading 1||heading 2||heading 3|||col A1|col A2|col A3||col B1|col B2|col B3|"
