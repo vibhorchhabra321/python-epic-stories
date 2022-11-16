@@ -2,6 +2,9 @@ name: Get Epic Stories
 on:
   pull_request:
     branches: [ main ]
+  repository_dispatch:
+    # this is the event_type passed in from the webhook, needs to match exactly what was defined in the webhook custom data payload
+    types: [ "generate-deployment-ticket" ]
 
 jobs:
   Commit_Checker:
